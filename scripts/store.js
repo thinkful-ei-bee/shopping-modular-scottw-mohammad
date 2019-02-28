@@ -2,6 +2,7 @@
 'use strict';
 
 const store = (function () {
+  const foo = 'bar';
 
   const items = [
     { id: cuid(), name: 'apples', checked: false },
@@ -9,13 +10,13 @@ const store = (function () {
     { id: cuid(), name: 'milk', checked: true },
     { id: cuid(), name: 'bread', checked: false }
   ];
+
   const hideCheckedItems = false;
-  const searchTerm= '';  
- 
+  const searchTerm= '';
+
   return{
     items,
     hideCheckedItems,
     searchTerm
   };
-  
 }() );
