@@ -18,7 +18,7 @@ const store = (function () {
     try{
       Item.validateName(name);
       this.items.push(Item.create(name));
-    }catch(e){
+    }catch(error){
       throw console.log('Cannot add item: {error.message}');
     }
   };
@@ -27,12 +27,27 @@ const store = (function () {
     this.findById(id).checked = !checked;
   }; 
 
-  
+  const findAndUpdateName = function(id, newName){
+    try{
+      Item.validateName(newName);
+      this.findById(id).name = newName;
+    }catch(error){
+      console.log('Cannot update name: {error.message}');
+    }
+  };
+
+  const findAndDelete = function(id){
+    this.items = this.items.filter(item => item.id !== id);
+  };
 
   return{
     items,
     hideCheckedItems,
     searchTerm,
-    findById
+    findById,
+    addItem,
+    findAndToggleChecked,
+    findAndUpdateName,
+    findAndDelete
   };
 }() );
