@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 'use strict';
 const store = (function () {
-  const foo = 'bar';
 
   const items = [
     { id: cuid(), name: 'apples', checked: false },
