@@ -10,6 +10,9 @@ const store = (function () {
   ];
   const hideCheckedItems = false;
   const searchTerm= '';  
+  //
+  //WHAT IS TEMPCODERUNNERFILE.JS
+  //
   const findById = function(id){
     return store.items.find(item => item.id === id);
   };
@@ -24,7 +27,7 @@ const store = (function () {
   };
 
   const findAndToggleChecked = function(id){
-    this.findById(id).checked = !checked;
+    this.findById(id).checked = !this.findById(id).checked;
   }; 
 
   const findAndUpdateName = function(id, newName){

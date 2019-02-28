@@ -1,1 +1,0 @@
-store.items.find(item => item.id === id);
